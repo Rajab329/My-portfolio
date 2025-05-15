@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Personal Portfolio of Rajab Shekabughi" />
+  <meta name="keywords" content="Portfolio, Web Developer, HTML, CSS, JavaScript" />
+  <meta name="author" content="Rajab Shekabughi" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Rajab Shekabughi</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      background-color: #444;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      margin-top: 0;
+      color: #222;
+    }
+
+    figure {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    figure img {
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body onload="displayGreeting()">
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+    <p id="greeting">Loading greeting...</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="survey.html">Survey</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Hi, I'm Rajab Shekabughi</h2>
+      <p>I'm an aspiring web developer with a passion for building beautiful, interactive websites using HTML, CSS, and JavaScript.</p>
+      <p>This portfolio is a showcase of what I've learned and created. Have a look around!</p>
+      <figure>
+        <img src="../image/Photo1.jpg" alt="Profile Picture" />
+        <figcaption>This is me!</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Watch My Work</h2>
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Portfolio Demo" allowfullscreen></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rajab. Made with HTML, CSS &amp; JavaScript.</p>
+  </footer>
+
+  <script>
+    function displayGreeting() {
+      const greetingElement = document.getElementById("greeting");
+      const now = new Date();
+
+      const hours = now.getHours();
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const day = now.getDate();
+      const year = now.getFullYear();
+
+      const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const months = ["January", "February", "March", "April", "May", "June",
+                      "July", "August", "September", "October", "November", "December"];
+
+      const weekday = weekdays[now.getDay()];
+      const month = months[now.getMonth()];
+
+      let greetingMessage;
+
+      if (hours < 12) {
+        greetingMessage = "Good morning!";
+      } else if (hours < 18) {
+        greetingMessage = "Good afternoon!";
+      } else {
+        greetingMessage = "Good evening!";
+      }
+
+      greetingElement.textContent = `${greetingMessage} Today is ${weekday}, ${month} ${day}, ${year}. Current time: ${hours}:${minutes}:${seconds}`;
+    }
+  </script>
+</body>
+</html>
